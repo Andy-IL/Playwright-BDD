@@ -10,7 +10,7 @@ export default class LoginPage extends BasePage {
     }
 
     async gotoLoginPage(){
-        await this.page.locator(loginPageLoc.loginLink.locator, loginPageLoc.loginLink.locatorOptions).click(loginPageLoc.loginLink.actOptions);
+        await this.page.locator(loginPageLoc.loginLink.locator, loginPageLoc.loginLink.locatorOptions).click(loginPageLoc.loginLink.actOptions)
     }
 
     async loginToApp() {
