@@ -9,16 +9,29 @@ Given('User is on login page', async function () {
     this.attach('this is start if user is on loging page step.....!');
     loginPage=new LoginPage(getPage(), this.attach);
     await loginPage.gotoLoginPage();
-    this.attach('login is successfull');    
+    this.attach('login page ready');    
     this.parameters.a=10;
 });
 
-When('User enter login details', async function () {
-    await loginPage.loginToApp();
-    this.attach('logout is successfull')
+When ('User enters login details from env', async function () {
+    await loginPage.defaultLoginToApp() ;
+    this.attach('default login with env details successful')
+
+}) ;
+
+When('User enters login details {string}, {string}', async function (username: string, password:string) {
+    await loginPage.tryLoginToApp(username,password);
 });
 
-When('Logout should be successfull', async function () {
+Then ('response {string} should appear', async function (response: string) {
+    await loginPage.testLoginResponse (response) ;
+
+
+} ) ;
+
+// Then('Logout should be successful', async function () {
+
+ When('Logout should be successful', async function () {
     console.log('Logout is success');
     console.log(`login page: value is ${this.parameters.a}`);
 });

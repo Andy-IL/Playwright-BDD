@@ -17,6 +17,11 @@
         "locator": "xpath=//input[@value='Login']",
         "description": "login Btn"
     },
+    "loginFailResponse": {
+        "locator": "xpath=/html/body/div[2]/div[5]/div[1]/div[1]",
+        "description": "badLoginResponse"
+
+    }, 
     "logoutLink": {
         "locator": "xpath=//a[contains(.,'Logout') and @class='list-group-item']",
         "description": "logout Link"

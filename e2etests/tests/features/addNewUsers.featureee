@@ -1,0 +1,23 @@
+Feature: add new users
+@register
+    Scenario Outline: multiple registrations
+    
+        Given User is on login page
+        When User clicks the Continue button
+        Then the Register Account page appears
+        When User enters personal details "<firstname>", "<lastname>", "<email>", "<password>"
+        When User clicks Continue button 
+        Then response "<response>" should appear 
+        When User clicks Privacy Policy button
+        And User clicks Continue button 
+        Then "Your Account Has Been Created" message appears
+        When User clicks Continue button 
+        Then Home page should be displayed
+
+
+
+Examples: 
+| firstname     |  lastname     | email                 | password            |  response           |
+| dummy         |  dummy        | dummy1234@gmail.com   | dummy1234@gmail.com | Warning: You must agree to the Privacy Policy!    |
+# | dummy2        |  dummy2       | dummy1234@gmail.com   | dummy1234@gmail.com | valid login         |
+

@@ -1,0 +1,18 @@
+Feature: to test invalid logins
+# @login
+    Scenario Outline: multiple logins
+    
+        Given User is on login page
+        When User enters login details "<email>", "<password>"
+        Then User is on login page
+        And response "<response>" should appear
+
+
+Examples: 
+| email                 | password             |  response        |
+# | dummyduf@gmail.com   | dummy124@gmail.com  |  Warning: No match for E-Mail Address and/or Password.      |
+| dummy12@gmail2.com   | dummyduff2            |  Warning: No match for E-Mail Address and/or Password.      |
+| dummyduff3@gmail.com   | dummy234@gmail.com  |  Warning: No match for E-Mail Address and/or Password.      |
+# | sss                   | sss                  |  Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour. |
+# | dummy1234@gmail.com   | dummy1234@gmail.com  |  valid login      |
+

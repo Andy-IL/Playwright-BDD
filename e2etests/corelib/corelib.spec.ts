@@ -3,7 +3,7 @@ import { Browser, BrowserContext, Page, chromium, firefox } from "playwright";
 import { expect } from "@playwright/test";
 import dotenv from "dotenv";
 
-setDefaultTimeout(1000 * 60 * 2);
+ setDefaultTimeout(1000 * 60 * 2);
 
 let browser: Browser;
 let bCtx: BrowserContext;
@@ -20,7 +20,8 @@ BeforeAll(async function () {
     switch (browserType) {
         case 'chrome':
         case 'gc':
-            browser = await chromium.launch({ headless: false, channel: "chrome", args: ['--start-maximized'] });
+            // browser = await chromium.launch({ headless: false, channel: "chrome", args: ['--start-maximized'] });
+            browser = await chromium.launch({ headless: false, channel: "chrome", slowMo: 500 , args: ['--start-maximized'] });
             break;
         case 'firefox':
         case 'ff':
@@ -44,7 +45,7 @@ Before(async function (scenario) {
 });
 
 After(async function (scenario) {
-    this.attach(`----------------- ${scenario.pickle.name} is ended.............!`);
+    this.attach(`---------After(): - ${scenario.pickle.name} is ended.............!`);
     this.attach(`SCENARIO STATUS IS >>>>>>>>>> ${scenario.result?.status} >>>>>>`);
     if (scenario.result?.status == Status.FAILED) {
 
@@ -67,8 +68,10 @@ After(async function (scenario) {
         
     }
 
-    await page.close();
-    await bCtx.close();
+    // console.log("After() closing page")
+    // await page.close();
+    // console.log("After() closing bctx")
+    // await bCtx.close();
 });
 
 BeforeStep(async function (scenario) {
@@ -76,11 +79,12 @@ BeforeStep(async function (scenario) {
 });
 
 AfterStep(async function (scenario) {
-    this.attach(`----------------- ${scenario.pickleStep.text} is ended.............!`);
+    this.attach(`-----AfterStep()--- ${scenario.pickleStep.text} is ended.............!`);
 });
 
 AfterAll(async function () {
-    await browser.close();
+    // console.log("AfterAll() closing browser")
+    // await browser.close();
 });
 
 export function getPage(): Page {

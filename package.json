@@ -14,7 +14,7 @@
   "author": "equality tech",
   "license": "ISC",
   "devDependencies": {
-    "@cucumber/cucumber": "^10.3.1",
+    "@cucumber/cucumber": "^10.7.0",
     "@playwright/test": "^1.40.1",
     "cross-env": "^7.0.3",
     "cucumber-html-reporter": "^7.1.1",

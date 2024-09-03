@@ -1,17 +1,16 @@
 <?xml version="1.0"?>
-<testsuite failures="0" skipped="0" name="cucumber-js" time="11.475856312000001" tests="2">
-  <testcase classname="to test login functionality1" name="to test login functionality1" time="5.875175361">
+<testsuite failures="0" skipped="0" name="cucumber-js" time="16.138390881" tests="1">
+  <testcase classname="to test homepage functionality" name="My Account functionality" time="16.138390881">
     <system-out><![CDATA[Given User is on login page...............................................passed
-When User enter login details.............................................passed
+When User enters login details from env...................................passed
+Then Home page should be displayed........................................passed
+When user clicks on Edit Account link.....................................passed
+Then My Account Information appears.......................................passed
+When User fills in Account info...........................................passed
+Then success message "Success: Your account has been successfully updat...passed
 And Home page should be displayed.........................................passed
-When Upon logout..........................................................passed
-Then Logout should be successfull.........................................passed]]></system-out>
-  </testcase>
-  <testcase classname="to test login functionalit2" name="to test login functionality2" time="5.600680951">
-    <system-out><![CDATA[Given User is on login page...............................................passed
-When User enter login details.............................................passed
-And Home page should be displayed.........................................passed
-When Upon logout..........................................................passed
-Then Logout should be successfull.........................................passed]]></system-out>
+When User clicks on View Order History link...............................passed
+Then Order History page appears...........................................passed
+When User clicks on Continue button.......................................passed]]></system-out>
   </testcase>
 </testsuite>

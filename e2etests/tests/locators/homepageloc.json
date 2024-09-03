@@ -4,5 +4,58 @@
         "actionOptons": {
             "timeout": 5000
         }
+    },
+    "MyAccountInfoTitle": {
+        "locator": "xpath=/html/body/div[1]/div[5]/div[1]/div/div/h1",
+        "actionOptons": {
+            "timeout": 5000
+        }
+    },
+        
+    "MyAccInfoFirstName": {
+        "locator": "xpath=//input[@id='input-firstname']",
+        "actionOptons": {
+            "timeout": 5000
+        }
+    },
+    "MyAccInfoLastName": {
+        "locator": "xpath=//input[@id='input-lastname']",
+        "actionOptons": {
+            "timeout": 5000
+        }
+    },
+    "MyAccInfoEmail": {
+        "locator": "xpath=//input[@id='input-email']",
+        "actionOptons": {
+            "timeout": 5000
+        }
+    },
+    "MyAccInfoContinue": {
+        "locator": "xpath=//input[@value='Continue']",
+        "actionOptons": {
+            "timeout": 5000
+        }
+    },
+    "AccountUpdatedMsg": {
+        "locator": "xpath=//div[contains(@class, 'alert-success')]"        
+    },
+    "ViewOrderHistLink": {
+        "locator": "xpath=//a[contains(.,'View your order history')]",
+        "actionOptons": {
+            "timeout": 5000
+        }
+    },    
+    "OrderHistoryTitle": {
+        "locator": "xpath=/html/body/div[1]/div[5]/div[1]/div/div/h1",
+        "actionOptons": {
+            "timeout": 5000
+        }
+    },
+    "OrderHistoryContinue": {
+        "locator": "xpath=//*[@class='btn btn-primary']",
+        "actionOptons": {
+            "timeout": 5000
+        }
     }
+ 
 }
